@@ -43,13 +43,13 @@ router.post('/signin', async function (req, res) {
     const enteredPassword = req.body.password;
 
 
-
+    const [vehicle] = await db.query('SELECT * FROM vehicles WHERE los = 1')
     const [user] = await db.query('SELECT * FROM users WHERE email = ?', enteredUsername);
 
     const passwordsAreEqual = await bcrypt.compare(enteredPassword, user[0].password)
 
     if (passwordsAreEqual){
-        res.render('map', {user: user});
+        res.render('map', {user: user, vehicle: vehicle});
     } else {
         res.render('loginerror');
     }
