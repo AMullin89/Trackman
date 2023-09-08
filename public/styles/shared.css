@@ -83,21 +83,26 @@ input {
     margin-bottom: 0.5rem;
 }
 
-#sign-in-button {
+#sign-in-button, #retry-button {
     font-family: "Dosis", sans-serif;
     border: none;
     background-color: #005b96;
     color: #b3cde0;
     width: 5rem;
-    margin: 1rem auto;
+    margin-left: 11rem;
+    margin-bottom: 1rem;
     font-size: 1.3rem;
     padding: 5px;
     border-radius: 5px;
     box-shadow: 1px 1px 1px #373738;
 }
 
-#sign-in-button:hover {
+#sign-in-button:hover, #retry-button:hover {
     cursor: pointer;
     background-color: #6497b1;
+}
+
+#error-message {
+    text-align: center;
 }
 

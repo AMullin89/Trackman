@@ -24,12 +24,45 @@
       <h1><a href="/">Trackman</a></h1>
       <nav id="nav-bar">
         <ul>
-          <li><a href="/signup">Sign Up</a></li>
-          <li><a href="/">Sign In</a></li>
+          <%= "Welcome " + user[0].first_name + " " + user[0].last_name + "!" %>
         </ul>
       </nav>
     </header>
-    <div id="map"></div>
+    <div id="map-container">
+      <div id="map"></div>
+      <div id="vehicle-container">
+        <div class="vehicle-card">
+          <h3 class="vehicle-index">LL19DVG</h3>
+          <p class="color">White</p>
+          <p class="make-model">Dacia Sandero</p>
+        </div>
+        <div class="vehicle-card">
+          <h3 class="vehicle-index">NX58RLU</h3>
+          <p class="color">Silver</p>
+          <p class="make-model">Vauxhall Corsa</p>
+        </div>
+        <div class="vehicle-card">
+          <h3 class="vehicle-index">CX72OME</h3>
+          <p class="color">Black</p>
+          <p class="make-model">Volvo XC90</p>
+        </div>
+        <div class="vehicle-card">
+          <h3 class="vehicle-index">LC70CVD</h3>
+          <p class="color">Blue</p>
+          <p class="make-model">BMW X5</p>
+        </div>
+        <div class="vehicle-card">
+          <h3 class="vehicle-index">DT68UMH</h3>
+          <p class="color">Black</p>
+          <p class="make-model">Suzuki Vital</p>
+        </div>
+        <div class="vehicle-card">
+          <h3 class="vehicle-index">DT68UMH</h3>
+          <p class="color">Black</p>
+          <p class="make-model">Suzuki Vital</p>
+        </div>
+      </div>
+    </div>
 
     <script src="/map.js" defer></script>
   </body>
