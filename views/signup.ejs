@@ -11,6 +11,11 @@
       rel="stylesheet"
     />
     <title>GPS Tracker</title>
+    <script
+      src="https://kit.fontawesome.com/bdddb9b7ac.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/signup.js" defer></script>
   </head>
   <body>
     <header id="header-main">
@@ -37,12 +42,44 @@
           <input type="email" id="confirm-username" name="confirm-username" />
           <label for="password">Password:</label>
           <input type="password" id="password" name="password" />
+          <p>
+            <i
+              id="minChar"
+              class="fa-regular fa-circle-xmark"
+              style="color: #b3cde0"
+            ></i>
+            Minimum 8 characters
+          </p>
+          <p>
+            <i
+              id="minNum"
+              class="fa-regular fa-circle-xmark"
+              style="color: #b3cde0"
+            ></i>
+            At least 1 number
+          </p>
+          <p>
+            <i
+              id="minCap"
+              class="fa-regular fa-circle-xmark"
+              style="color: #b3cde0"
+            ></i>
+            At least 1 capital letter
+          </p>
           <label for="confirm-password">Confirm Password:</label>
           <input
             type="password"
             id="confirm-password"
             name="confirm-password"
           />
+          <p>
+            <i
+              id="password-match"
+              class="fa-regular fa-circle-xmark"
+              style="color: #b3cde0"
+            ></i>
+            Password must match
+          </p>
           <button id="sign-in-button">Sign Up</button>
         </form>
       </div>

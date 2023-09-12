@@ -8,18 +8,29 @@ center: [0.63646, 51.78791],
 zoom: 13
 });
 
-const popup = new mapboxgl.Popup().setHTML('<h3>Home Address</h3><p>12 Stainer Close, Witham, CM81RU</p>');
+const carIcon = new Image();
+
+carIcon.src = 'car (1).png'
+carIcon.width = 10;
+carIcon.height = 10;
+
+
 
 const vehicleData = document.getElementById('vehicle-container').getAttribute('data');
 
 const finalVehicleData = JSON.parse(vehicleData);
 
 for (let i = 0; i < finalVehicleData.length; i++){
-
+    const popup = new mapboxgl.Popup().setHTML(
+        `<div id="vehicle-popup"><h3>${finalVehicleData[i].vrm}</h3>
+        <p>${finalVehicleData[i].make}, ${finalVehicleData[i].model}</p>
+        <p>${finalVehicleData[i].color}</p></div>`
+        );
     const vehicleCardElement = document.getElementById(i + 1);
     const longLat = [finalVehicleData[i].latitude, finalVehicleData[i].longitude];
     const marker = new mapboxgl.Marker().setLngLat(longLat).addTo(map);
 marker.setPopup(popup);
+
 
 function centerMap(){
     map.setCenter(longLat);

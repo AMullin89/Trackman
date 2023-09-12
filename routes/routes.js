@@ -17,7 +17,8 @@ router.get('/signup', function (req, res) {
 
 router.post('/signup', async function (req, res) {
 
-  let hashedPassword = await bcrypt.hash(req.body.password, 10);
+//Hash user's password
+let hashedPassword = await bcrypt.hash(req.body.password, 10);
 
 const userData = [
     req.body.firstname,
@@ -26,14 +27,22 @@ const userData = [
     hashedPassword
 ];
 
+//Check if email is already in use by another user
+const [existingUser] = await db.query('SELECT * FROM users WHERE email = ?', req.body.username);
+console.log(existingUser);
 
- 
-await db.query(
-    'INSERT INTO users (first_name, last_name, email, password) VALUES (?)',
-     [userData]
-    );
-
-res.redirect('/');
+if (existingUser.email) {
+    console.log("User already exists");
+   return res.redirect('signup');
+} else {
+//Send user details to database
+    await db.query(
+        'INSERT INTO users (first_name, last_name, email, password) VALUES (?)',
+         [userData]
+        );
+    
+    res.redirect('/');
+}
 });
 
 //Handle sign in requests
