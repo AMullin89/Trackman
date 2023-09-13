@@ -17,9 +17,18 @@ router.get('/signup', function (req, res) {
 
 router.post('/signup', async function (req, res) {
 
+//Check if entered password is valid and matches confirm password
+const regex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
+const isValid = regex.test(req.body.password);
+
+if (!isValid || req.body.password !== req.body["confirm-password"]){
+    return res.render('invalidpassword');
+};
+
 //Hash user's password
 let hashedPassword = await bcrypt.hash(req.body.password, 10);
 
+//Store user's inputted data
 const userData = [
     req.body.firstname,
     req.body.lastname,
@@ -29,11 +38,9 @@ const userData = [
 
 //Check if email is already in use by another user
 const [existingUser] = await db.query('SELECT * FROM users WHERE email = ?', req.body.username);
-console.log(existingUser);
 
-if (existingUser.email) {
-    console.log("User already exists");
-   return res.redirect('signup');
+if (existingUser[0].email) {
+   return res.render('existinguser');
 } else {
 //Send user details to database
     await db.query(
