@@ -39,7 +39,7 @@ const userData = [
 //Check if email is already in use by another user
 const [existingUser] = await db.query('SELECT * FROM users WHERE email = ?', req.body.username);
 
-if (existingUser[0].email) {
+if (existingUser[0]) {
    return res.render('existinguser');
 } else {
 //Send user details to database
