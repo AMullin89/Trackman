@@ -39,6 +39,24 @@ a {
     color: #b3cde0;
 }
 
+#nav-btns{
+    display: flex;
+}
+
+.header-btn{
+    border: none;
+    background-color: #011f4b;
+    color: #b3cde0;
+    font-family: inherit;   
+    font-size: 1.2rem;
+}
+
+.header-btn:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+
 #hero-content {
     width: 100%;
     color: #b3cde0;
@@ -75,7 +93,7 @@ label {
     padding-bottom: 1rem;
 }
 
-input {
+input, select {
     height: 1.5rem;
     width: 98%;
     display: block;
@@ -83,6 +101,7 @@ input {
     margin-bottom: 0.5rem;
     font-family: "Dosis", sans-serif;
     font-size: larger;
+
 }
 
 input:focus {
@@ -119,4 +138,5 @@ input:focus {
 i {
     margin-left: 2rem;
 }
+
 

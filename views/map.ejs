@@ -23,8 +23,22 @@
     <header id="header-main">
       <h1><a href="/">Trackman</a></h1>
       <nav id="nav-bar">
-        <ul>
-          <%= "Welcome " + user[0].first_name + " " + user[0].last_name + "!" %>
+        <ul id="nav-btns">
+          <li>
+            <form action="/add" method="GET">
+              <button class="header-btn">Add</button>
+            </form>
+          </li>
+          <li>
+            <form action="/update" method="POST">
+              <button class="header-btn">Update</button>
+            </form>
+          </li>
+          <li>
+            <form action="/logout" method="POST">
+              <button class="header-btn">Sign out</button>
+            </form>
+          </li>
         </ul>
       </nav>
     </header>
