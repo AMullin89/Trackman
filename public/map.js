@@ -19,6 +19,7 @@ carIcon.height = 10;
 const vehicleData = document.getElementById('vehicle-container').getAttribute('data');
 
 const finalVehicleData = JSON.parse(vehicleData);
+console.log(finalVehicleData);
 
 for (let i = 0; i < finalVehicleData.length; i++){
     const popup = new mapboxgl.Popup().setHTML(
@@ -28,7 +29,7 @@ for (let i = 0; i < finalVehicleData.length; i++){
         );
     const vehicleCardElement = document.getElementById(i + 1);
     const longLat = [finalVehicleData[i].latitude, finalVehicleData[i].longitude];
-    const marker = new mapboxgl.Marker({element: carIcon}).setLngLat(longLat).addTo(map);
+    const marker = new mapboxgl.Marker(carIcon).setLngLat(longLat).addTo(map);
 marker.setPopup(popup);
 
 
