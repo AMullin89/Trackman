@@ -74,7 +74,7 @@ router.post('/signin', async function (req, res) {
 
     //Handle incorrect username
     if (user.length === 0){
-        console.log("User not found!");
+      return console.log("User not found!");
     }
 
     //If log in is valid, create a session for the user
