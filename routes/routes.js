@@ -71,7 +71,7 @@ router.post('/signin', async function (req, res) {
     const [user] = await db.query('SELECT * FROM users WHERE email = ?', enteredUsername);
     //Handle incorrect username
     if (user[0] === undefined){
-        return console.log("User not found!");
+        return res.render('invaliduser');
     }
     
     //Compare entered password to stored hashed password
