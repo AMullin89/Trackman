@@ -1,11 +1,11 @@
 const mysql = require('mysql2/promise');
 
 const pool = mysql.createPool({
-    host: 'localhost',
+    host: 'sql208.infinityfree.com',
     port: 3306,
-    database: 'vehicle_tracker',
-    user: 'root',
-    password: 'Evelyn18!'
+    database: 'if0_35107377_vehicle_tracker',
+    user: 'if0_35107377',
+    password: 'hfXOEMxXI5'
 });
 
 module.exports = pool;
