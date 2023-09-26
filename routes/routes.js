@@ -73,7 +73,7 @@ router.post('/signin', async function (req, res) {
     const passwordsAreEqual = await bcrypt.compare(enteredPassword, user[0].password)
 
     //Handle incorrect username
-    if (user.length === 0){
+    if (user[0] === undefined){
       return console.log("User not found!");
     }
 
