@@ -72,6 +72,11 @@ router.post('/signin', async function (req, res) {
     //Compare entered password to stored hashed password
     const passwordsAreEqual = await bcrypt.compare(enteredPassword, user[0].password)
 
+    //Handle incorrect username
+    if (user.length === 0){
+        console.log("User not found!");
+    }
+
     //If log in is valid, create a session for the user
     if (passwordsAreEqual){
 
