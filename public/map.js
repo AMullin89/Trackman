@@ -28,7 +28,7 @@ for (let i = 0; i < finalVehicleData.length; i++){
         );
     const vehicleCardElement = document.getElementById(i + 1);
     const longLat = [finalVehicleData[i].latitude, finalVehicleData[i].longitude];
-    const marker = new mapboxgl.Marker().setLngLat(longLat).addTo(map);
+    const marker = new mapboxgl.Marker(carIcon).setLngLat(longLat).addTo(map);
 marker.setPopup(popup);
 
 
