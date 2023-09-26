@@ -69,13 +69,15 @@ router.post('/signin', async function (req, res) {
     const [vehicle] = await db.query('SELECT * FROM vehicles WHERE los = 1')
     //Retrieve user data if email is valid user
     const [user] = await db.query('SELECT * FROM users WHERE email = ?', enteredUsername);
+    //Handle incorrect username
+    if (user[0] === undefined){
+        return console.log("User not found!");
+    }
+    
     //Compare entered password to stored hashed password
     const passwordsAreEqual = await bcrypt.compare(enteredPassword, user[0].password)
 
-    //Handle incorrect username
-    if (user[0] === undefined){
-      return console.log("User not found!");
-    }
+ 
 
     //If log in is valid, create a session for the user
     if (passwordsAreEqual){
