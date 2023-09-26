@@ -6,11 +6,10 @@ const MySQLStore = require('express-mysql-session')(session);
 const favicon = require('express-favicon');
 
 const options = {
-	host: 'localhost',
-	port: 3306,
-	password: 'Evelyn18!',
-    database: 'vehicle_tracker',
-    user: 'root',
+    host: 'oliadkuxrl9xdugh.chr7pe7iynqr.eu-west-1.rds.amazonaws.com',
+    database: 'eucrzbyy9inxtgbj',
+    user: 'b2j43yb83gtnq0af',
+    password: 'mqh22vk93bq39ey9'
 };
 
 const sessionStore = new MySQLStore(options);
