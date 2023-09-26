@@ -3,6 +3,7 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
+const favicon = require('express-favicon');
 
 const options = {
 	host: 'localhost',
@@ -23,6 +24,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({extended: true}));
+app.use(favicon(__dirname + '/public/favicon.png'));
 
 
 
