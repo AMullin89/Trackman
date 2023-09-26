@@ -67,6 +67,7 @@ router.post('/signin', async function (req, res) {
 
     //Get all LOS vehicles from database
     const [vehicle] = await db.query('SELECT * FROM vehicles WHERE los = 1')
+    console.log(vehicle);
     //Retrieve user data if email is valid user
     const [user] = await db.query('SELECT * FROM users WHERE email = ?', enteredUsername);
     //Handle incorrect username
