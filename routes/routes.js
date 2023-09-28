@@ -87,18 +87,15 @@ router.post('/signin', async function (req, res) {
         req.session.isAuthenticated = true;
         req.session.save(function (){
             res.render('map', {user: user, vehicle: vehicle});
-            console.log("User is authenticated")
         })
     //If log in is invalid, display error message
     } else {
         res.render('loginerror');
-        console.log("User is not authenticated");
     }
 });
 
 router.get('/map', async function (req, res){
 
-    console.log(req.session.user.email);
     //If session is authenticated then display map with vehicles
     if(req.session.isAuthenticated){
         const [user] = await db.query('SELECT * FROM users WHERE email = ?', req.session.user.email);
