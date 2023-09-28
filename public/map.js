@@ -33,7 +33,8 @@ carIcon.height = 15;
     const marker = new mapboxgl.Marker(carIcon).setLngLat(longLat).addTo(map);
     marker.setPopup(popup);
   
-    function centerMap() {
+    function centerMap(event) {
+      event.preventDefault();
       map.setCenter(longLat);
     }
   
