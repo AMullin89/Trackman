@@ -131,7 +131,7 @@ router.post('/addvehicle', async function (req, res) {
 })
 
 
-router.post('/update', async function (req, res){
+router.get('/update', async function (req, res){
     //Get vehicles from database
     const [vehicle] = await db.query('SELECT * FROM vehicles')
     //Pass vehicle information to dropdown box
@@ -160,7 +160,7 @@ router.post('/updatecar', async function (req, res){
 });
 
 //Handle log out requests
-router.post('/logout',  function (req, res){
+router.get('/logout',  function (req, res){
 
     //Clear session data
     req.session.user = null;

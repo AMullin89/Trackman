@@ -10,31 +10,34 @@
       href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/bdddb9b7ac.js"
+      crossorigin="anonymous"
+    ></script>
     <title>GPS Tracker</title>
+    <script src="/sidedrawer.js" defer></script>
   </head>
   <body>
     <header id="header-main">
-      <h1><a href="/">Trackman</a></h1>
+      <h1 class="nav-element"><a href="/">Trackman</a></h1>
+      <div id="burger-icon">
+        <i class="fa-solid fa-bars nav-element" style="color: #b3cde0"></i>
+      </div>
       <nav id="nav-bar">
-        <ul>
-          <li>
-            <form action="/add" method="GET">
-              <button class="header-btn">Add</button>
-            </form>
-          </li>
-          <li>
-            <form action="/map" method="GET">
-              <button class="header-btn">Map</button>
-            </form>
-          </li>
-          <li>
-            <form action="/logout" method="POST">
-              <button class="header-btn">Sign out</button>
-            </form>
-          </li>
+        <ul class="nav-element">
+          <li><a href="/add">Add</a></li>
+          <li><a href="/map">Map</a></li>
+          <li><a href="/logout">Logout</a></li>
         </ul>
       </nav>
     </header>
+    <aside id="side-drawer">
+      <ul id="side-drawer-nav">
+        <li><a href="/add">Add</a></li>
+        <li><a href="/map">Map</a></li>
+        <li><a href="/logout">Sign Out</a></li>
+      </ul>
+    </aside>
     <section id="hero-content">
       <div id="hero-container">
         <header id="hero-header"><h2>Update Vehicle</h2></header>

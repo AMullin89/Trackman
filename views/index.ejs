@@ -14,16 +14,15 @@
       src="https://kit.fontawesome.com/bdddb9b7ac.js"
       crossorigin="anonymous"
     ></script>
+    <script src="/sidedrawer.js" defer></script>
     <title>GPS Tracker</title>
   </head>
   <body>
     <header id="header-main">
       <h1 class="nav-element"><a href="/">Trackman</a></h1>
-      <i
-        class="fa-solid fa-bars nav-element"
-        style="color: #b3cde0"
-        id="burger-icon"
-      ></i>
+      <div id="burger-icon">
+        <i class="fa-solid fa-bars nav-element" style="color: #b3cde0"></i>
+      </div>
       <nav id="nav-bar">
         <ul class="nav-element">
           <li><a href="/signup">Sign Up</a></li>
@@ -31,6 +30,12 @@
         </ul>
       </nav>
     </header>
+    <aside id="side-drawer">
+      <ul id="side-drawer-nav">
+        <li><a href="/">Sign In</a></li>
+        <li><a href="/signup">Sign Up</a></li>
+      </ul>
+    </aside>
     <section id="hero-content">
       <div id="hero-container">
         <header id="hero-header"><h2>Welcome to Trackman!</h2></header>

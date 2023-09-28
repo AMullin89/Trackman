@@ -16,32 +16,34 @@
       href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css"
       rel="stylesheet"
     />
-
+    <script
+      src="https://kit.fontawesome.com/bdddb9b7ac.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/sidedrawer.js" defer></script>
     <title>GPS Tracker</title>
   </head>
   <body>
     <header id="header-main">
-      <h1><a href="/">Trackman</a></h1>
+      <h1 class="nav-element"><a href="/">Trackman</a></h1>
+      <div id="burger-icon">
+        <i class="fa-solid fa-bars nav-element" style="color: #b3cde0"></i>
+      </div>
       <nav id="nav-bar">
-        <ul id="nav-btns">
-          <li>
-            <form action="/add" method="GET">
-              <button class="header-btn">Add</button>
-            </form>
-          </li>
-          <li>
-            <form action="/update" method="POST">
-              <button class="header-btn">Update</button>
-            </form>
-          </li>
-          <li>
-            <form action="/logout" method="POST">
-              <button class="header-btn">Sign out</button>
-            </form>
-          </li>
+        <ul id="nav-btns" class="nav-element">
+          <li><a href="/add">Add</a></li>
+          <li><a href="/update">Update</a></li>
+          <li><a href="/logout">Logout</a></li>
         </ul>
       </nav>
     </header>
+    <aside id="side-drawer">
+      <ul id="side-drawer-nav">
+        <li><a href="/add">Add</a></li>
+        <li><a href="/update">Update</a></li>
+        <li><a href="/logoout">Sign Out</a></li>
+      </ul>
+    </aside>
     <div id="map-container">
       <div id="map"></div>
       <div id="vehicle-container" data="<%= JSON.stringify(vehicle) %>">

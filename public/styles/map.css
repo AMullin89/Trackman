@@ -1,3 +1,17 @@
+html {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("/tile_background.png");
+    font-family: "Dosis", sans-serif;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 #map-container {
     width: 60%;
     height: fit-content;
@@ -57,4 +71,32 @@
 #vehicle-popup p {
     margin-top: 0;
     margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    body {
+        width: 100%;
+
+    }
+
+    header h1 {
+        margin-left: 0.2rem;
+    }
+    
+    #nav-btns {
+        display: none;
+    }
+
+    #map-container {
+        width: 90%;
+
+    }
+}
+
+@media (min-width: 768px){
+    #burger-icon
+    
+     {
+        display: none;
+    }
 }

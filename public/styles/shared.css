@@ -39,6 +39,10 @@ i {
     margin-right: 0.3rem;
 }
 
+i:hover {
+    cursor: pointer;
+}
+
 
 header ul {
     display: flex;
@@ -61,6 +65,23 @@ a {
 
 #nav-btns{
     display: flex;
+}
+
+#side-drawer {
+    background-color: #011f4b;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+#side-drawer ul {
+    list-style: none;
+    margin-top: 0;
+}
+
+#side-drawer-nav li {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .header-btn{
