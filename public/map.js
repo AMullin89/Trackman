@@ -38,6 +38,7 @@ carIcon.height = 15;
     }
   
     vehicleCardElement.addEventListener('click', centerMap);
+    vehicleCardElement.addEventListener('touchend', centerMap);
   }
   
 
